@@ -1,136 +1,144 @@
 <!DOCTYPE html>
 <html>
-<!-- Created with help from Prof. Andrews' code,
-     especially code on tooltips and configurable scatterplot. -->
   <head>
-    <meta charset="utf-8">
-    <title>Aayam and Jamie Sparkclouds</title>
-      <script src="http://d3js.org/d3.v3.min.js" charset="utf-8"></script>
-      <style type="text/css">
-      h1{
-        margin:0px;
+    <meta charset='utf-8'>
+    <title> SparkClouds </title>
+    <script src='http://d3js.org/d3.v3.min.js' charset='utf-8'></script>
+    <style type='text/css'>
+      h3{
         font-family:sans-serif;
-        font-size:24px;
-        text-align:center;
+        text-align: center;
+        color: #303030 ;
       }
-
-      h2{
-        margin:0px;
-        font-family:sans-serif;
-        font-size:18px;
-        text-align:center;
+      div.container{
+        float: left;
+        /*position: absolute;
+        bottom: 0;
+        left: 0;*/
       }
-      .axis text{
-          font-family:sans-serif;
-          font-size:11px;
-      }
-      .axis path,
-      .axis line{
-        fill:none;
-        stroke:gray;
-        shape-rendering: crisp-edges;
-      }
-      </style>
+      /*div.superContainer{
+        position: relative;
+      }*/
+    </style>
   </head>
-
   <body>
-    <h1>Sparkclouds</h1>
-    <h2>by Aayam Poudel and Jamie Hand</h2>
-    <div id="visDiv"></div>
+    <h3> Spark Clouds Jamie and Aayam </h3>
+    <div class="superContainer">
+        <!-- TODO do we need these here? can we just append divs? -->
+        <div class="container" id="div1"></div>
+        <div class="container" id="div2"></div>
+        <div class="container" id="div3"></div>
+        <div class="container" id="div4"></div>
+        <div class="container" id="div5"></div>
+        <div class="container" id="div6"></div>
+        <div class="container" id="div7"></div>
+        <div class="container" id="div8"></div>
+    </div>
 
-    <script>
-    var createVis = function(parent, width, height){
-        /* set up margins, divs, scales */
-        var margins = {top:20, left: 20, right:20, bottom:20};
-        var chartWidth = width - margins.left - margins.right;
-        var chartHeight = height - margins.top - margins.bottom;
-        var num_rows, num_columns;
-        var num_words;
+    <script type='text/javascript'>
 
-        var word_list = [];
+      var width = 500;
+      var height = 2000;
+      var margins = {top:0, bottom: 60, left: 60, right:15};
 
-        /* svg and chart selections */
-        var svg = d3.select(parent)
-          .append("svg")
-          .attr({width:width, height:height});
+      var xScale = d3.scale.linear().range([0,30]).nice();
+      var yScale = d3.scale.linear().range([20,0]).nice();
 
-        var chart = svg.append("g")
-          .attr("transform", "translate("+margins.left + "," + margins.top + ")");
 
-        chart.append("text")
-            .text("hello");
 
-        /* function that will get called to draw vis */
-        var vis = function(){
-            /* make a container div for each word */
-            var containers = chart.selectAll(".container")
-                .data(word_list)
-                .enter().append("g")
-                .attr({
-                    "class": "container",
-                    "width": "50px",
-                    "height": "60px",
-                    "fill": "blue"
-                });
+      d3.csv("data.csv", function(dataset){
 
-            console.log(containers);
+        //console.log(dataset);
+        /*var svg = d3.select('body')
+                      .append('svg')
+                      .attr({'width':width, 'height':height});
 
-            containers.forEach(function(container, index){
-                console.log(container);
-                container.append("text")
-                    .attr({
-                        "class": "word"
-                    })
-                    .text("asdfasdfa");
-                    // function(d) {
-                    //     console.log(d.Name);
-                    //     return d.Name;
-                    // });
-            });
+        var g = svg.append("g")
+                   .data(dataset)
+                   console.log(dataset)
 
-            // NOT this, because we don't want a new container for each
-            // word; we already did that above. Rather, in each container,
-            // we want to append a word.
-            var words = containers.selectAll(".word")
-                .data(function(d) {
-                    return d;
-                })
-                .enter().append("text")
-                .attr({
-                    "class": "word"
-                })
-                .text(function(d) {
-                    console.log(d.Name);
-                    return d.Name;
-                });
 
-        };
+        var text = g.enter()
+                    .append("text")
+                    .text(function(d){return "   " + d.Name + "   ";})
+                    .style("font-family", "sans-serif")
+                    .style("font-size", function(d){return 3* (parseInt(d.Line1) + parseInt(d.Line2) + parseInt(d.Line3) + parseInt(d.Line4) + parseInt(d.Line5) )+ "px"})
+                    .style("color", "teal")*/
 
-        /* load data from source into dataToVisualize */
-        vis.loadData = function(data){
-            word_list = data;
-            /* reload vis */
-            vis();
-        };
+        /*var svg = d3.select('body')
+                      .append('svg')
+                      .attr({'width':width, 'height':height});
 
-        return vis;
-    }; /* end createVis */
+        var g = svg.selectAll("g")
+                   .data(dataset)
+                   .enter()
+                   .append("g")
+                   .attr('transform', function(d,i){
+                       return "translate("+70+","+ i* 70 +")";
+                     });
 
-    /* create vis div */
-    var vis = createVis("#visDiv", 500, 500);
+         var text = g.append("text")
+                     .text(function(d){return "   " + d.Name + "   ";})
+                     .attr("y", +60)
+                     .style("font-family", "sans-serif")
+                     .style("font-size", function(d){return 3* (parseInt(d.Line1) + parseInt(d.Line2) + parseInt(d.Line3) + parseInt(d.Line4) + parseInt(d.Line5) )+ "px"})
+                     .style("fill", "teal")*/
 
-    /* get data from file and draw vis with it */
-    d3.csv("data.csv",
-      function(error, data){
-          if (error) throw error;
-        console.log(data);
+         var dummy = function(d){return 3* (parseInt(d.Line1) + parseInt(d.Line2) + parseInt(d.Line3) + parseInt(d.Line4) + parseInt(d.Line5) )};
 
-        /* add data to visualization */
-        vis.loadData(data);
+         var svg = d3.select('body')
+                       .append('svg')
+                       .attr({'width':width, 'height':height});
 
-        /* draw visualization */
-        vis();
-    }); /* end d3.json */
+         var g = svg.selectAll("g")
+                    .data(dataset)
+                    .enter()
+                    .append("g")
+                    .attr('transform', function(d,i){
+                        return "translate("+70+","+ i* 70 +")";
+                      });
+
+         var divs = d3.select('body').selectAll('.container')
+                      .data(dataset);
+
+         divs.exit().remove();
+
+         console.log("divs");
+         console.log(divs);
+
+         divs.data(dataset)
+             .enter()
+             .append("div")
+             .attr({
+                 class: "container"
+             });
+
+         divs.append("text")
+             .text(function(d){return "   " + d.Name + "   ";})
+             .style("font-family", "sans-serif")
+             .style("font-size", function(d){return dummy(d)+ "px"})
+             .style("fill", "teal");
+
+        //  divs.forEach(function(divItem){
+        //      console.log(divItem);
+        //      d3.select(divItem)
+        //        .append("text")
+        //        .text("hello!");
+        //  });
+         //
+        //  var text = g.append("text")
+        //              .text(function(d){return "   " + d.Name + "   ";})
+        //              .attr("y", +60)
+        //              .style("font-family", "sans-serif")
+        //              .style("font-size", function(d){return dummy(d)+ "px"})
+        //              .style("fill", "teal");
+
+
+
+
+
+      });
+
     </script>
   </body>
 </html>
