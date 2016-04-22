@@ -12,13 +12,26 @@
       }
       div.container{
         float: left;
+        /*vertical-align: middle;*/
+        position: relative;
+        top: 50%;
+        -webkit-transform: translateY(-50%);
+        -ms-transform: translateY(-50%);
+        transform: translateY(-50%);
         /*position: absolute;
         bottom: 0;
         left: 0;*/
       }
-      /*div.superContainer{
+      div.superContainer{
+        vertical-align: bottom;
         position: relative;
-      }*/
+        padding: 30px;
+        /* so that elements won't appear blurry; see:
+         * http://zerosixthree.se/vertical-align-anything-with-just-3-lines-of-css/ */
+        -webkit-transform-style: preserve-3d;
+        -moz-transform-style: preserve-3d;
+        transform-style: preserve-3d;
+      }
     </style>
   </head>
   <body>
@@ -47,43 +60,6 @@
 
 
       d3.csv("data.csv", function(dataset){
-
-        //console.log(dataset);
-        /*var svg = d3.select('body')
-                      .append('svg')
-                      .attr({'width':width, 'height':height});
-
-        var g = svg.append("g")
-                   .data(dataset)
-                   console.log(dataset)
-
-
-        var text = g.enter()
-                    .append("text")
-                    .text(function(d){return "   " + d.Name + "   ";})
-                    .style("font-family", "sans-serif")
-                    .style("font-size", function(d){return 3* (parseInt(d.Line1) + parseInt(d.Line2) + parseInt(d.Line3) + parseInt(d.Line4) + parseInt(d.Line5) )+ "px"})
-                    .style("color", "teal")*/
-
-        /*var svg = d3.select('body')
-                      .append('svg')
-                      .attr({'width':width, 'height':height});
-
-        var g = svg.selectAll("g")
-                   .data(dataset)
-                   .enter()
-                   .append("g")
-                   .attr('transform', function(d,i){
-                       return "translate("+70+","+ i* 70 +")";
-                     });
-
-         var text = g.append("text")
-                     .text(function(d){return "   " + d.Name + "   ";})
-                     .attr("y", +60)
-                     .style("font-family", "sans-serif")
-                     .style("font-size", function(d){return 3* (parseInt(d.Line1) + parseInt(d.Line2) + parseInt(d.Line3) + parseInt(d.Line4) + parseInt(d.Line5) )+ "px"})
-                     .style("fill", "teal")*/
-
          var dummy = function(d){return 3* (parseInt(d.Line1) + parseInt(d.Line2) + parseInt(d.Line3) + parseInt(d.Line4) + parseInt(d.Line5) )};
 
          var svg = d3.select('body')
@@ -112,12 +88,14 @@
              .attr({
                  class: "container"
              });
+            //  .style;
 
          divs.append("text")
              .text(function(d){return "   " + d.Name + "   ";})
              .style("font-family", "sans-serif")
              .style("font-size", function(d){return dummy(d)+ "px"})
-             .style("fill", "teal");
+             .style("vertical-align", "bottom")
+             .style("color", "teal");
 
         //  divs.forEach(function(divItem){
         //      console.log(divItem);
@@ -132,10 +110,6 @@
         //              .style("font-family", "sans-serif")
         //              .style("font-size", function(d){return dummy(d)+ "px"})
         //              .style("fill", "teal");
-
-
-
-
 
       });
 
