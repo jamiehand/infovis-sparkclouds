@@ -1,6 +1,8 @@
 body {
     background-color: lightblue;
     font-family: sans-serif;
+    padding-left: 60px;
+    padding-right: 60px;
 }
 
 h1, h4 {
