@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset='utf-8'>
+    <title> SparkClouds </title>
+    <script src='http://d3js.org/d3.v3.min.js' charset='utf-8'></script>
+    <style type='text/css'>
+      h1,h2,h3,h4{
+        font-family:sans-serif;
+        text-align: center;
+        color: #303030 ;
+      }
+      .line {
+      fill: none;
+      stroke: steelblue;
+      stroke-width: 1.5px;
+      }
+      div.container{
+        display: inline-block;
+      }
+      div.word_container{
+      }
+      div.sparkline{
+        width: 70px;
+        height: 30px;
+      }
+      div.superContainer{
+      }
+    </style>
+  </head>
+  <body>
+    <h1>State of the Union Addresses, 2001-2016</h1>
+    <h3>SparkClouds Demo <br> Jamie and Aayam, May 2016</h3>
+    <h4>A SparkCloud represenation of the top words used in the past 16
+        SOTU addresses.</h4>
+    <div class="superContainer">
+        <!-- TODO do we need these here? can we just append divs w/ d3? -->
+        <div class="container">
+          <div class="word_container"></div>
+          <div class="sparkline"></div>
+        </div>
+        <div class="container">
+          <div class="word_container"></div>
+          <div class="sparkline"></div>
+        </div>
+        <div class="container">
+          <div class="word_container"></div>
+          <div class="sparkline"></div>
+        </div>
+        <div class="container">
+          <div class="word_container"></div>
+          <div class="sparkline"></div>
+        </div>
+        <div class="container">
+          <div class="word_container"></div>
+          <div class="sparkline"></div>
+        </div>
+        <div class="container">
+          <div class="word_container"></div>
+          <div class="sparkline"></div>
+        </div>
+        <div class="container">
+          <div class="word_container"></div>
+          <div class="sparkline"></div>
+        </div>
+        <div class="container">
+          <div class="word_container"></div>
+          <div class="sparkline"></div>
+        </div>
+        <div class="container">
+          <div class="word_container"></div>
+          <div class="sparkline"></div>
+        </div>
+        <div class="container">
+          <div class="word_container"></div>
+          <div class="sparkline"></div>
+        </div>
+        <div class="container">
+          <div class="word_container"></div>
+          <div class="sparkline"></div>
+        </div>
+        <div class="container">
+          <div class="word_container"></div>
+          <div class="sparkline"></div>
+        </div>
+        <div class="container">
+          <div class="word_container"></div>
+          <div class="sparkline"></div>
+        </div>
+        <div class="container">
+          <div class="word_container"></div>
+          <div class="sparkline"></div>
+        </div>
+        <div class="container">
+          <div class="word_container"></div>
+          <div class="sparkline"></div>
+        </div>
+        <div class="container">
+          <div class="word_container"></div>
+          <div class="sparkline"></div>
+        </div>
+        <div class="container">
+          <div class="word_container"></div>
+          <div class="sparkline"></div>
+        </div>
+        <div class="container">
+          <div class="word_container"></div>
+          <div class="sparkline"></div>
+        </div>
+        <div class="container">
+          <div class="word_container"></div>
+          <div class="sparkline"></div>
+        </div>
+        <div class="container">
+          <div class="word_container"></div>
+          <div class="sparkline"></div>
+        </div>
+        <div class="container">
+          <div class="word_container"></div>
+          <div class="sparkline"></div>
+        </div>
+        <div class="container">
+          <div class="word_container"></div>
+          <div class="sparkline"></div>
+        </div>
+        <div class="container">
+          <div class="word_container"></div>
+          <div class="sparkline"></div>
+        </div>
+        <div class="container">
+          <div class="word_container"></div>
+          <div class="sparkline"></div>
+        </div>
+        <div class="container">
+          <div class="word_container"></div>
+          <div class="sparkline"></div>
+        </div>
+        <div class="container">
+          <div class="word_container"></div>
+          <div class="sparkline"></div>
+        </div>
+        <div class="container">
+          <div class="word_container"></div>
+          <div class="sparkline"></div>
+        </div>
+        <div class="container">
+          <div class="word_container"></div>
+          <div class="sparkline"></div>
+        </div>
+        <div class="container">
+          <div class="word_container"></div>
+          <div class="sparkline"></div>
+        </div>
+        <div class="container">
+          <div class="word_container"></div>
+          <div class="sparkline"></div>
+        </div>
+        <div class="container">
+          <div class="word_container"></div>
+          <div class="sparkline"></div>
+        </div>
+        <div class="container">
+          <div class="word_container"></div>
+          <div class="sparkline"></div>
+        </div>
+        <div class="container">
+          <div class="word_container"></div>
+          <div class="sparkline"></div>
+        </div>
+        <div class="container">
+          <div class="word_container"></div>
+          <div class="sparkline"></div>
+        </div>
+        <div class="container">
+          <div class="word_container"></div>
+          <div class="sparkline"></div>
+        </div>
+        <div class="container">
+          <div class="word_container"></div>
+          <div class="sparkline"></div>
+        </div>
+        <div class="container">
+          <div class="word_container"></div>
+          <div class="sparkline"></div>
+        </div>
+        <div class="container">
+          <div class="word_container"></div>
+          <div class="sparkline"></div>
+        </div>
+        <div class="container">
+          <div class="word_container"></div>
+          <div class="sparkline"></div>
+        </div>
+        <div class="container">
+          <div class="word_container"></div>
+          <div class="sparkline"></div>
+        </div>
+        <div class="container">
+          <div class="word_container"></div>
+          <div class="sparkline"></div>
+        </div>
+        <div class="container">
+          <div class="word_container"></div>
+          <div class="sparkline"></div>
+        </div>
+        <div class="container">
+          <div class="word_container"></div>
+          <div class="sparkline"></div>
+        </div>
+        <div class="container">
+          <div class="word_container"></div>
+          <div class="sparkline"></div>
+        </div>
+        <div class="container">
+          <div class="word_container"></div>
+          <div class="sparkline"></div>
+        </div>
+        <div class="container">
+          <div class="word_container"></div>
+          <div class="sparkline"></div>
+        </div>
+
+    </div>
+
+
+    <script type='text/javascript'>
+
+      var width = 50;
+      var height = 20;
+      var margins = {top:0, bottom: 60, left: 60, right:15};
+      var sparkline_width = 70;
+      var sparkline_height = 30;
+
+      var xScale = d3.scale.linear().range([0,sparkline_width]).nice();
+      var yScale = d3.scale.linear().range([sparkline_height,0]).nice();
+
+      var TextScale = d3.scale.linear().range([12, 100]).nice();
+
+
+      d3.csv("SOTU_words.csv", function(dataset){
+
+        var nestedData = d3.nest()
+                            .key(function(d) {return d.word})
+                            .entries(dataset);
+
+        nestedData.forEach(function(d){
+          var total = 0;
+          for(var i = 0; i < d.values.length; i++){
+            total += +d.values[i].freq;
+          }
+          d.totalFrequency = total;
+        })
+
+        nestedData.sort(function(a, b){
+          return (b.totalFrequency - a.totalFrequency);
+        });
+
+
+        TextScale.domain(d3.extent(nestedData, function(d) {return d.totalFrequency;}))
+
+
+        var divs = d3.select('body').selectAll('.word_container')
+                     .data(nestedData);
+
+
+        divs.append("text")
+            .text(function(d){return d.key})
+            .style("font-family", "sans-serif")
+            .style("font-size", function(d){return TextScale(d.totalFrequency)+"px"})
+            .style("vertical-align", "bottom")
+            .style("color", "teal");
+
+
+       var line = d3.svg.line()
+         .x(function(d) { return xScale(+d.year); })
+         .y(function(d) { return yScale(+d.freq); });
+
+       var chart = divs.append("svg")
+                        .attr("width", width)
+                        .attr("height", height);
+
+var line_divs = d3.select('body').selectAll('.sparkline')
+                  .data(nestedData);
+var  chart2 = line_divs.append("svg")
+                 .attr("width", sparkline_width)
+                 .attr("height", sparkline_height);
+
+        chart2.append("path")
+              .datum(function(d){
+
+
+                xScale.domain([2001,2016]);
+                /* TODO use a separate domain for each word, using the actual
+                 * min and max for that word; 1 and 38 are the min and
+                 * max of our current dataset. */
+                yScale.domain([1, 38]);
+                //console.log(d.values);
+                return d.values
+              })
+              .attr("class", "line")
+              .attr("d", line);
+
+
+        });
+
+
+    </script>
+  </body>
+</html>
