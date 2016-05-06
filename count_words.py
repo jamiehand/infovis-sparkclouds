@@ -62,13 +62,13 @@ def remove_stop_words(word_dict):
 
 def get_most_frequent(word_dict, num_words):
     """
-    Sort keys (words) by value and then extract the top 10,
+    Sort keys (words) by value and then extract the top num_words,
     or duplicate the dictionary and then find the largest key/value pair in
     the dictionary (get max value) and remove that key/value pair 10 times.
     Ideas here: http://stackoverflow.com/a/280156/4979097
     """
     most_freq = []
-    while(len(most_freq) < num_words):
+    while(len(most_freq) < num_words and len(word_dict.keys()) > 0):
 #        max_word = max(word_with_frequency_dict,
 #                       key=lambda x: word_with_frequency_dict[x[0]])
         max_word = max(word_dict, key=word_dict.get)  # dict.get() returns value for given key
@@ -93,7 +93,7 @@ def txt_to_csv(input_filename, year):
     word_list = read_words(input_filename)
     word_dict = count_words(word_list)
     remove_stop_words(word_dict)
-    word_tuples = get_most_frequent(word_dict,25)
+    word_tuples = get_most_frequent(word_dict,100000)
     write_words_to_file(word_tuples, year)
     print(word_tuples)
 

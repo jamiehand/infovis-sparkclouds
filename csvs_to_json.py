@@ -7,10 +7,10 @@ def make_SOTU_CSVs():
         filename = "SOTU-textfiles/" + str(year) + ".txt"
         txt_to_csv(filename, year)
 
-def aggregate_CSVs():
-    for year in range(2001,2017):
-        filename = "SOTU-csv/" + str(year) + ".csv"
-        print(filename)
+# def aggregate_CSVs():
+#     for year in range(2001,2017):
+#         filename = "SOTU-csv/" + str(year) + ".csv"
+#         print(filename)
 
 if __name__ == '__main__':
-    aggregate_CSVs()
+    make_SOTU_CSVs()
