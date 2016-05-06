@@ -85,7 +85,7 @@ def write_words_to_file(word_tuples, year):
     """
     filename = "SOTU-csv/" + str(year)+".csv"
     f = open(filename, "w")
-    f.write("word,frequency,year\n")
+    f.write("word,freq,year\n")
     for tup in word_tuples:
         f.write(tup[0]+","+str(tup[1])+","+str(year)+"\n")
 
