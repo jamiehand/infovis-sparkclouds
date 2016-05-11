@@ -15,14 +15,26 @@
 
 <h2>What is a SparkCloud?</h2>
 <p>
-  A SparkCloud is a tag cloud with spark lines incorporated along with
-  each word. It was a result of Microsoft Research conducted by four women,
-  namely: Bongshin Lee, Nathalie Henry Riche, Amy K. Karlson, and  Sheelagh
+  A SparkCloud is a tag cloud with sparklines incorporated along with
+  each word. It was a result of Microsoft Research conducted by
+  Bongshin Lee, Nathalie Henry Riche, Amy K. Karlson, and  Sheelagh
   Carpendale. The purpose of SparkClouds is to let people see how tag clouds
   change over time.
 </p>
 
-<h2><a href="sparkcloud.html">Click here to see our demo using SOTU addresses!</a></h2>
+<h2><a href="sparkcloud.html">Our implementation</a></h2>
+<p>
+    The source code for the implementation, including the Python scripts and
+    SOTU text files used to generate our dataset, can be found
+    <a href="https://github.com/jamiehand/infovis-sparkclouds.git">
+    on GitHub</a>.
+</p>
+<a href="sparkcloud.html">
+    <!-- TODO make img responsive? -->
+    <img src="demo.png" width="960"
+     class="img-responsive" border="2" alt="sparkcloud demo">
+</a>
+
 
 <h2>Evaluation</h2>
 <p>
@@ -38,6 +50,8 @@
     <h3>Cons</h3>
     The lack of x-axis labels forces
     users to guess which time period (e.g. month) is represented.
+    That is, accessing specific time and other details in the data would
+    require interaction or something similar.
     The y-axis is normalized for each word, which makes it difficult to compare
     frequency between words (except by size of word, which is less precise).
     The position of a text on the screen means nothing, which means we're
@@ -45,17 +59,18 @@
     Furthermore, long words inevitably get more attention than short words of the same
     frequency, which might give a slightly wrong
     impression about the data.
-    Accessing details in the data would require interaction. Finally,
+    Finally,
     SparkClouds are a very specific type of visualization, which can only be
     used for word-based or tag-based datasets.
     <h3>Summary</h3>
     While SparkClouds are good for seeing trends in a tag-based dataset over time,
     they're not great for diving into details about the dataset. One particular
     example of when SparkClouds would
-    be very useful is comparing State of the Union addresses over the years and
-    seeing how the most frequently used words have changed over time. This
-    gives us a big picture of how the
-    speeches might have changed to reflect time era, presidents and policies.
+    be very useful is
+    <a href="sparkcloud.html">comparing State of the Union addresses over the years
+    </a> and seeing how the most frequently used words have changed over time.
+    This gives us a big picture of how the
+    speeches might have changed to reflect time era, presidents, and policies.
 </p>
 
 
@@ -89,7 +104,7 @@
     <li><a href="http://research.microsoft.com/en-us/um/redmond/groups/cue/karlson/karlson.htm">http://research.microsoft.com/en-us/um/redmond/groups/cue/karlson/karlson.htm</a>,
     <span class=info>Amy K. Karlson</span></li>
     <li><a href="http://innovis.cpsc.ucalgary.ca/People/SheelaghCarpendale">http://innovis.cpsc.ucalgary.ca/People/SheelaghCarpendale</a>,
-    <span class=info>Sheelash Carpendale</span></li>
+    <span class=info>Sheelagh Carpendale</span></li>
 
 
 
